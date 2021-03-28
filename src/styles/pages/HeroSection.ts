@@ -38,7 +38,6 @@ export const HeroHeader = styled(ReactTyped)`
 
   @media screen and (max-width: 960px) {
     font-size: 70px;
-    margin-top: 250px;
   }
 `
 
