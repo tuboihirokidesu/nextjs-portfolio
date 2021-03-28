@@ -43,7 +43,7 @@ export const NavMenu = styled.ul<{ click: boolean }>`
   z-index: 10;
   text-align: center;
   width: 100vw;
-  justify-content: center;
+  justify-content: end;
   margin-right: 2rem;
   @media screen and (max-width: 960px) {
     position: fixed;
