@@ -11,6 +11,8 @@ import {
   NavBtn,
   NavItems
 } from '../styles/pages/Navbar'
+import Button from '../styles/pages/Button'
+import { faChevronRight, faTimes } from '@fortawesome/free-solid-svg-icons'
 
 const Navbar = () => {
   const [click, setClick] = useState(false)
@@ -41,20 +43,26 @@ const Navbar = () => {
       click={click}
     >
       <IconWrap onClick={handleClick}>
-        <MenuIcon className={click ? 'fas fa-times' : 'fas fa-bars'} />
+        <MenuIcon icon={click ? faTimes : faChevronRight} />
       </IconWrap>
       <NavMenu click={click}>
         <Link href="/" passHref>
-          <NavMenuLinks>Home</NavMenuLinks>
+          <NavMenuLinks className="nav-links" onClick={closeMobileMenu}>
+            Home
+          </NavMenuLinks>
         </Link>
         <Link href="/article" passHref>
-          <NavMenuLinks>Article</NavMenuLinks>
+          <NavMenuLinks className="nav-links" onClick={closeMobileMenu}>
+            Article
+          </NavMenuLinks>
         </Link>
         <Link href="/project" passHref>
-          <NavMenuLinks>Project</NavMenuLinks>
+          <NavMenuLinks className="nav-links" onClick={closeMobileMenu}>
+            Project
+          </NavMenuLinks>
         </Link>{' '}
       </NavMenu>
-      {/* <NavBtn>
+      <NavBtn>
         <Button
           href="https://github.com/tuboihirokidesu/portfolio"
           primary
@@ -62,7 +70,7 @@ const Navbar = () => {
         >
           GitHub
         </Button>
-      </NavBtn> */}
+      </NavBtn>
     </Nav>
   )
 }

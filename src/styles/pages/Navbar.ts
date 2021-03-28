@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export const Nav = styled.nav<{ scroll: boolean; click: boolean }>`
   height: 80px;
@@ -6,7 +7,6 @@ export const Nav = styled.nav<{ scroll: boolean; click: boolean }>`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 1rem 2rem;
   position: fixed;
   z-index: 100;
   &.scroll-bg-change {
@@ -29,7 +29,7 @@ export const IconWrap = styled.div`
     transform: translate(-50%, 50%);
   }
 `
-export const MenuIcon = styled.i`
+export const MenuIcon = styled(FontAwesomeIcon)`
   width: 100%;
   height: 100%;
   font-size: 2rem;
@@ -42,8 +42,8 @@ export const NavMenu = styled.ul<{ click: boolean }>`
   list-style: none;
   z-index: 10;
   text-align: center;
-  width: 60vw;
-  justify-content: end;
+  width: 100vw;
+  justify-content: center;
   margin-right: 2rem;
   @media screen and (max-width: 960px) {
     position: fixed;
@@ -52,7 +52,7 @@ export const NavMenu = styled.ul<{ click: boolean }>`
     transition: all 0.5s ease;
     top: 80px;
     align-items: center;
-    height: 100vh;
+    height: 90vh;
     width: 100%;
     opacity: 1;
     background: ${({ click }) => (click ? '#242424' : '')};
@@ -76,9 +76,6 @@ export const NavMenuLinks = styled.a`
     align-items: center;
     padding: 0.5rem 1rem;
   }
-  &.nav-links-mobile {
-    display: none;
-  }
   &.active {
     color: #fa923f;
   }
@@ -89,24 +86,8 @@ export const NavMenuLinks = styled.a`
   @media screen and (max-width: 960px) {
     &.nav-links {
       text-align: center;
-      padding: 2rem;
-      width: 100%;
       font-size: 2rem;
       z-index: 1;
-    }
-    &.nav-links-mobile {
-      display: block;
-      text-align: center;
-      margin: 2rem auto;
-      border-radius: 4px;
-      width: 80%;
-      text-decoration: none;
-      font-size: 1.5rem;
-      background-color: transparent;
-      color: #fff;
-      padding: 14px 20px;
-      border: 1px solid #fff;
-      transition: all 0.3s ease-out;
     }
   }
 `
