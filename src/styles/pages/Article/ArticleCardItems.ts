@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
-const CardsItem = styled.li`
+export const CardsItem = styled.li`
   display: flex;
   justify-content: center;
   flex: 1;
@@ -12,8 +12,9 @@ const CardsItem = styled.li`
   @media only screen and (max-width: 1024px) {
     margin-bottom: 2rem;
   }
-`;
-const CardsItemLink = styled.a`
+`
+
+export const CardsItemLink = styled.a`
   display: flex;
   flex-flow: column;
   width: 100%;
@@ -21,8 +22,9 @@ const CardsItemLink = styled.a`
   border-radius: 10px;
   overflow: hidden;
   text-decoration: none;
-`;
-const CardsPicWrap = styled.figure`
+`
+
+export const CardsPicWrap = styled.figure`
   position: relative;
   width: 100%;
   padding-top: 67%;
@@ -41,8 +43,9 @@ const CardsPicWrap = styled.figure`
     background-color: #1f98f4;
     box-sizing: border-box;
   }
-`;
-const CardsImage = styled.img`
+`
+
+export const CardsImage = styled.img`
   position: absolute;
   top: 0;
   right: 0;
@@ -59,36 +62,16 @@ const CardsImage = styled.img`
   :hover {
     transform: scale(1.1);
   }
-`;
-const CardsItemInfo = styled.div`
+`
+
+export const CardsItemInfo = styled.div`
   padding: 20px 30px 30px;
-`;
-const CardsItemText = styled.h5`
+`
+
+export const CardsItemText = styled.h5`
   color: #fff;
   font-size: 18px;
   line-height: 24px;
   display: flex;
   justify-content: center;
-`;
-
-type Props = {
-  src: string;
-  text: string;
-  label: string;
-  path: string;
-};
-
-const ArticleCardItem = ({ src, text, label, path }: Props) => (
-  <CardsItem>
-    <CardsItemLink href={path}>
-      <CardsPicWrap data-category={label}>
-        <CardsImage src={src} />
-      </CardsPicWrap>
-      <CardsItemInfo>
-        <CardsItemText>{text}</CardsItemText>
-      </CardsItemInfo>
-    </CardsItemLink>
-  </CardsItem>
-);
-
-export default ArticleCardItem;
+`
