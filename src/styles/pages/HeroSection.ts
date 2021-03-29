@@ -20,19 +20,9 @@ export const HeroWrapper = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  h1 {
-    color: ${props => props.theme.colors.primary};
-    font-size: 54px;
-    margin-top: 40px;
-  }
-  p {
-    margin-top: 24px;
-    font-size: 24px;
-    line-height: 32px;
-  }
 `
 export const HeroHeader = styled(ReactTyped)`
-  color: #fa923f;
+  color: ${props => props.theme.colors.orange};
   font-weight: 600;
   font-size: 100px;
 
@@ -43,7 +33,7 @@ export const HeroHeader = styled(ReactTyped)`
 
 export const HeroParagraph = styled(ReactTyped)`
   margin-top: 8px;
-  color: #fff;
+  color: ${props => props.theme.colors.text};
   font-size: 32px;
 
   @media screen and (max-width: 960px) {

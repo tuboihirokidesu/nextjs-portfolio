@@ -32,7 +32,7 @@ const Home: React.FC = () => {
                   type: 'circle',
                   stroke: {
                     width: 6,
-                    color: '#f9ab00'
+                    color: '#fa923f'
                   }
                 }
               }
