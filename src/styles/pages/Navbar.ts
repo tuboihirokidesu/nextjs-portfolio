@@ -52,7 +52,7 @@ export const NavMenu = styled.ul<{ click: boolean }>`
     transition: all 0.5s ease;
     top: 80px;
     align-items: center;
-    height: 90vh;
+    height: 100vh;
     width: 100%;
     opacity: 1;
     background: ${({ click }) => (click ? '#242424' : '')};
@@ -60,17 +60,12 @@ export const NavMenu = styled.ul<{ click: boolean }>`
     left: ${({ click }) => (click ? '0' : '-100%')};
   }
 `
-export const NavItems = styled.li`
-  display: flex;
-  justify-self: center;
-  align-items: center;
-  margin-bottom: 10px;
-`
+
 export const NavMenuLinks = styled.a`
   &.nav-links {
     color: #fff;
     display: flex;
-    height: 80%;
+    height: 150px;
     justify-self: center;
     text-decoration: none;
     align-items: center;

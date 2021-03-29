@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react'
-// import { navMenuData } from 'data/navMenuData';
-// import Button from 'components/Button';
 import Link from 'next/link'
 import {
   IconWrap,
@@ -8,11 +6,11 @@ import {
   Nav,
   NavMenuLinks,
   NavMenu,
-  NavBtn,
-  NavItems
+  NavBtn
 } from '../styles/pages/Navbar'
 import Button from '../styles/pages/Button'
 import { faChevronRight, faTimes } from '@fortawesome/free-solid-svg-icons'
+import { NavLinkData } from '../data/navMenuData'
 
 const Navbar = () => {
   const [click, setClick] = useState(false)
@@ -46,21 +44,13 @@ const Navbar = () => {
         <MenuIcon icon={click ? faTimes : faChevronRight} />
       </IconWrap>
       <NavMenu click={click}>
-        <Link href="/" passHref>
-          <NavMenuLinks className="nav-links" onClick={closeMobileMenu}>
-            Home
-          </NavMenuLinks>
-        </Link>
-        <Link href="/article" passHref>
-          <NavMenuLinks className="nav-links" onClick={closeMobileMenu}>
-            Article
-          </NavMenuLinks>
-        </Link>
-        <Link href="/project" passHref>
-          <NavMenuLinks className="nav-links" onClick={closeMobileMenu}>
-            Project
-          </NavMenuLinks>
-        </Link>{' '}
+        {NavLinkData.map(item => (
+          <Link key={item.id} href={item.href} passHref>
+            <NavMenuLinks className="nav-links" onClick={closeMobileMenu}>
+              {item.title}
+            </NavMenuLinks>
+          </Link>
+        ))}
       </NavMenu>
       <NavBtn>
         <Button
